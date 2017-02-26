@@ -1,0 +1,54 @@
+﻿@model Assignment6.Controllers.PlaylistEditTrackForm
+
+@{
+	ViewBag.Title = "Edit Playlist";
+}
+<h2>Edit Playlist @Html.DisplayFor(model => model.Name)</h2>
+
+@using (Html.BeginForm())
+{
+	@Html.AntiForgeryToken()
+
+	<div class="form-group btn-toolbar">
+		<h4>Select tracks, and click the "Save Changes" button</h4>
+		<hr />
+		@Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+		<input type="submit" value="Save" class="btn btn-success" />
+		<a href="../Details/@Model.PlaylistId" class="btn btn-info" role="button">Details</a>
+		<a href="../../Playlist/Index" class="btn btn-danger" role="button">Back to List</a>
+	</div>
+	<div class="row">
+		<div class="col-md-8">
+			<table class="table">
+				<tr>
+					<th colspan="2">
+						All Tracks
+					</th>
+				</tr>
+				@foreach (var item in Model.TrackList)
+				{
+					<tr>
+						<td><input type="checkbox" name="TrackIds" value="@item.Value" checked="@item.Selected" /></td>
+						<td>@item.Text</td>
+					</tr>
+				}
+			</table>
+		</div>
+		<div class="col-md-4 well">
+			<span><b>Now on Playlist</b></span> <span class="badge">@Html.DisplayFor(model => model.TracksCount)</span>
+			@if (Model.TracksCount > 0)
+			{
+				foreach (var item in Model.TrackOnPlaylist.OrderBy(x => x.Name))
+				{
+					<p>
+						@item.Name
+					</p>
+				}
+			}
+		</div>
+	</div>
+}
+@section Scripts {
+	@Scripts.Render("~/bundles/jqueryval")
+}

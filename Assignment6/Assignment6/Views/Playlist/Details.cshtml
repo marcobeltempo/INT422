@@ -1,0 +1,44 @@
+﻿@model Assignment6.Controllers.PlaylistWithDetail
+
+@{
+	ViewBag.Title = "Details";
+}
+<h2>Details</h2>
+<hr />
+<h4> @Model.Name Playlist Details</h4>
+
+<div class="btn-toolbar">
+	@Html.ValidationSummary(true, "", new { @class = "text-danger" })
+	<a href="../Edit/@Model.PlaylistId" class="btn btn-warning" role="button">Edit</a>
+	<a href="../Index" class="btn btn-danger" role="button">Back to List</a>
+</div>
+<hr />
+<div>
+
+
+	<dl class="form-group">
+		<dt>
+			@Html.DisplayNameFor(model => model.Name)
+		</dt>
+
+		<dd>
+			@Html.DisplayFor(model => model.Name)
+		</dd>
+
+		<dt>
+			@Html.DisplayNameFor(model => model.TracksCount)
+		</dt>
+
+		<dd>
+			@Html.DisplayFor(model => model.TracksCount)
+		</dd>
+
+	</dl>
+</div>
+
+@foreach (var song in Model.Tracks)
+{
+	<dd>
+		@song.Name
+	</dd>
+}
