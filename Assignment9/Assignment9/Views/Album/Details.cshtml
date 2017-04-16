@@ -1,0 +1,69 @@
+﻿@model Assignment9.Controllers.AlbumWithDetail
+
+@{
+    ViewBag.Title = @Html.DisplayFor(model => model.Name) + " Details";
+}
+
+<h2>Details - @Html.DisplayFor(model => model.Name)</h2>
+<p>
+    @Html.ActionLink("Add new Track for this Album", "AddTrack")
+</p>
+<div>
+    <h4>Album Details</h4>
+
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+            <hr />
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ReleaseDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ReleaseDate)
+            <hr />
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.UrlAlbum)
+        </dt>
+
+        <dd>
+            <img src="@Html.DisplayFor(modelItem => modelItem.UrlAlbum)" alt="@Html.DisplayFor(modelItem => modelItem.UrlAlbum)" height="100" width="100">
+            <hr />
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Genre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Genre)
+            <hr />
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Coordinator)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Coordinator)
+            <hr />
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Depiction)
+        </dt>
+
+        <dd>
+            <div class="well well-lg"> @Html.Raw(Model.Depiction)</div>
+            <hr />
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Back to List", "Index")
+</p>

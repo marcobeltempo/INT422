@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="IIS Web Application Name" description="" value="mabeltempo-wa2017a7" tags="IisApp">
+    <parameterEntry kind="ProviderPath" scope="IisApp" match="^C:\\Users\\marco\\OneDrive\\Homework\\CPA-Semester4\\INT422\\Assignment7\\Assignment7\\obj\\Release\\Package\\PackageTmp$" />
+    <parameterEntry kind="ProviderPath" scope="setAcl" match="^C:\\Users\\marco\\OneDrive\\Homework\\CPA-Semester4\\INT422\\Assignment7\\Assignment7\\obj\\Release\\Package\\PackageTmp$" />
+  </parameter>
+  <parameter name="DefaultConnection-Web.config Connection String" description="" value="Data Source=tcp:mabeltempo-ds2017.database.windows.net,1433;Initial Catalog=Assign7Store;Persist Security Info=False;User ID=mabeltempo@mabeltempo-ds2017;Password=Mab9104?;Connect Timeout=30;Encrypt=True;TrustServerCertificate=False" tags="">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\marco\\OneDrive\\Homework\\CPA-Semester4\\INT422\\Assignment7\\Assignment7\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='DefaultConnection']/@connectionString" />
+  </parameter>
+</parameters>
